@@ -1,5 +1,6 @@
 using DryApi.Demo2;
 using DryApi.Demo3;
+using DryApi.Demo4;
 
 namespace DryApi;
 
@@ -13,7 +14,8 @@ public class Program
         builder.Services.AddControllers();
 
         builder.Services.AddDemo2Services();
-        builder.Services.AddDemo3Services(ValueCheckerType.NonEmpty);
+        builder.Services.AddDemo3Services(ValueCheckerType.Ok);
+        builder.Services.AddDemo4Services();
 
         var app = builder.Build();
 

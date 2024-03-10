@@ -1,0 +1,107 @@
+### Demo 1 - PASS
+GET http://localhost:5174/demo1?value=ok
+
+> {%
+    client.test("Request executed successfully", function() {
+        client.assert(response.status === 200, "Response status is not 200");
+    });
+%}
+
+### Demo 1 - FAIL
+GET http://localhost:5174/demo1?value=0
+
+> {%
+    client.test("Request execution failed successfully", function() {
+        client.assert(response.status === 400, "Response status is not 400");
+    });
+%}
+
+### Demo 2 - PASS
+GET http://localhost:5174/demo2?value=ok
+
+> {%
+    client.test("Request executed successfully", function() {
+        client.assert(response.status === 200, "Response status is not 200");
+    });
+%}
+
+### Demo 2 - FAIL
+GET http://localhost:5174/demo2?value=f
+
+> {%
+    client.test("Request execution failed successfully", function() {
+        client.assert(response.status === 400, "Response status is not 400");
+    });
+%}
+
+### Demo 3 - PASS
+GET http://localhost:5174/demo3?value=ok
+
+> {%
+    client.test("Request executed successfully", function() {
+        client.assert(response.status === 200, "Response status is not 200");
+    });
+%}
+
+### Demo 3 - FAIL
+GET http://localhost:5174/demo3?value=nope
+
+> {%
+    client.test("Request execution failed successfully", function() {
+        client.assert(response.status === 400, "Response status is not 400");
+    });
+%}
+
+### Demo 4 - PASS
+GET http://localhost:5174/demo4?value=test&other=test
+
+> {%
+    client.test("Request executed successfully", function() {
+        client.assert(response.status === 200, "Response status is not 200");
+    });
+%}
+
+### Demo 4 - FAIL
+GET http://localhost:5174/demo4?value=test&other=nope
+
+> {%
+    client.test("Request execution failed successfully", function() {
+        client.assert(response.status === 400, "Response status is not 400");
+    });
+%}
+
+### Demo 5 - PASS
+GET http://localhost:5174/demo5?value=test&other=test
+
+> {%
+    client.test("Request executed successfully", function() {
+        client.assert(response.status === 200, "Response status is not 200");
+    });
+%}
+
+### Demo 5 - FAIL
+GET http://localhost:5174/demo5?value=test&other=nope
+
+> {%
+    client.test("Request execution failed successfully", function() {
+        client.assert(response.status === 400, "Response status is not 400");
+    });
+%}
+
+### Demo 6 - PASS
+GET http://localhost:5174/demo6?value=test&other=test
+
+> {%
+    client.test("Request executed successfully", function() {
+        client.assert(response.status === 200, "Response status is not 200");
+    });
+%}
+
+### Demo 6 - FAIL
+GET http://localhost:5174/demo6?value=test&other=nope
+
+> {%
+    client.test("Request execution failed successfully", function() {
+        client.assert(response.status === 400, "Response status is not 400");
+    });
+%}

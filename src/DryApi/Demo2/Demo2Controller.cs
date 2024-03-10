@@ -22,20 +22,3 @@ public sealed class Demo2Controller : ControllerBase
         return BadRequest();
     }
 }
-
-public sealed class ValueChecker
-{
-    public bool TestValue(string value)
-    {
-        return value == "ok";
-    }
-}
-
-public static class Demo2ServiceExtensions
-{
-    public static IServiceCollection AddDemo2Services(this IServiceCollection services)
-    {
-        services.AddSingleton<ValueChecker>();
-        return services;
-    }
-}
